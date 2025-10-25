@@ -5,19 +5,36 @@
 # and the first word starts with an uppercase.  
 # For example the string "StopAndSmellTheRoses" would be converted to "Stop and smell the roses."
 
-# Start your changes on line 13
+# Title: Word Separator
+# Author: Arianna Endres
+# Date: 10/24/2025
 
 def word_separator(sentence):
 
     new_sentence = ""
-    #    Add your logic here
+    new_sentence += sentence[0]
+
+    for word in range(1, len(sentence)):
+        character = sentence[word]
+
+        if character.isupper():
+            character = character.lower()
+            new_sentence += ' '
+
+        new_sentence += character
+
+    new_sentence += "."
 
     return new_sentence.strip()
 
-# Example usage
 
-sentence = "StopAndSmellTheRoses"
+def main():
 
-new_sentence = word_separator(sentence)
+    sentence = input("Enter a sentence without spaces and with the first "
+                     "letter of every word capitalized: ")
 
-print(new_sentence)
+    new_sentence = word_separator(sentence)
+
+    print(new_sentence)
+
+main()

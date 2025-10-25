@@ -3,16 +3,21 @@
 # and displays their first, middle, and last initials.  
 # For example, if the user enters John William Smith, the program should display J. W. S.
 
-# Add your logic starting on line 11
+# Title: Initials
+# Author: Arianna Endres
+# Date: 10/24/2025
 
 def initials_generator(personsName):
 
     personsInitials = ""
-    #    Add your logic here
+    name = personsName.split()
+
+    for word in name:
+        print(word[0].upper() + '. ', end = '')
 
     return personsInitials.strip()
 
-personsName = input('Enter the users first, middle, and last name')
+personsName = input('Enter the users first, middle, and last name: ')
 
 initials = initials_generator(personsName)
 
